@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 
 
@@ -34,6 +34,11 @@ class Donation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
 
-
+# class User(AbstractUser):
+#
+#     username = None
+#     email = models.EmailField(_('email address'), unique=True)
+#
+#     USERNAME_FIELD = 'email'
 
 
