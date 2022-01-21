@@ -5,6 +5,9 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.name
+
 
 INSTITUTIONS = (
     ('FUNDACJA', 'fundacja'),
@@ -18,6 +21,9 @@ class Institution(models.Model):
     description = models.TextField()
     type = models.CharField(max_length= 35, choices=INSTITUTIONS, default='FUNDACJA')
     categories = models.ManyToManyField(Category)
+
+    def __str__(self):
+        return self.name
 
 
 class Donation(models.Model):
@@ -34,6 +40,9 @@ class Donation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
 
+
+
+
 # class User(AbstractUser):
 #
 #     username = None
@@ -41,4 +50,6 @@ class Donation(models.Model):
 #
 #     USERNAME_FIELD = 'email'
 
-
+####list display - name zamiast object
+####__str w modelu
+### biblioteka asynchio

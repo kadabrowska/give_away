@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'oddaj_w_dobre_rece_app',
+    'accounts_app',
 ]
 
 MIDDLEWARE = [
