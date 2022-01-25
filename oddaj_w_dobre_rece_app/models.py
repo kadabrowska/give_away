@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
 
+from accounts_app.models import CustomUser
+
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -37,19 +39,6 @@ class Donation(models.Model):
     pick_up_date = models.DateField()
     pick_up_time = models.TimeField()
     pick_up_comment = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
 
-
-
-
-# class User(AbstractUser):
-#
-#     username = None
-#     email = models.EmailField(_('email address'), unique=True)
-#
-#     USERNAME_FIELD = 'email'
-
-####list display - name zamiast object
-####__str w modelu
-### biblioteka asynchio

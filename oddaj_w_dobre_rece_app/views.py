@@ -1,8 +1,11 @@
-from django.db.models import Count, Sum
+from django.db.models import Sum
 from django.shortcuts import render
 from django.views import View
 
 from oddaj_w_dobre_rece_app.models import Donation, Institution
+
+from django.conf import settings
+User = settings.AUTH_USER_MODEL
 
 
 class LandingPageView(View):
@@ -23,4 +26,3 @@ class LandingPageView(View):
 class AddDonationView(View):
     def get(self, request):
         return render(request, "form.html")
-
